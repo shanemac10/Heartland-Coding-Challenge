@@ -1,0 +1,172 @@
+h1 {
+	color: var(--red);
+}
+.member-form-container {
+	margin: 4rem auto;
+	width: 90%;
+	max-width: 60rem;
+}
+.member-form-container > h2 {
+	text-align: center;
+	color: white;
+	background: #0275ff;
+	width: 100%;
+	padding: 1rem 1.5rem;
+}
+
+.member-form {
+	display: flex;
+	flex-direction: column;
+	margin: var(--global-spacing) auto;
+	--base-color: #3c3c3c;
+	--primary: #0175ff;
+	--primary-light: #89a5b5;
+}
+.member-form.processing {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.member-form a {
+	color: var(--primary);
+}
+.member-form label,
+.member-form p {
+	user-select: none;
+	cursor: default;
+}
+.member-form label,
+.member-form label:not([class]) {
+	font-size: 300;
+	font-weight: bold;
+	font-family: var(--ff-serif);
+	text-indent: var(--global-nudge);
+	color: var(--primary);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.member-form input {
+	text-indent: var(--global-nudge);
+	font-family: var(--ff-serif);
+	color: var(--base-color);
+	--border: 3px solid var(--primary);
+	border: var(--border);
+}
+.form-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.form-group > p {
+	width: 100%;
+	margin-bottom: var(--global-nudge);
+}
+.form-group > *:not(p) + * {
+	margin-left: var(--global-nudge);
+}
+.input-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.checkbox-group,
+.radio-option {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.checkbox-group label,
+.checkbox-group label:not([class]) {
+	--font-size: var(--fs-400);
+	font-size: var(--font-size);
+}
+.input-group.required > label::after {
+	content: '(required)';
+	font-size: var(--fs-200);
+	line-height: var(--font-size);
+	color: var(--red);
+	text-indent: var(--global-nudge);
+	display: inline-block;
+}
+.age {
+	max-width: 6ch;
+}
+.zip-code {
+	max-width: 10ch;
+}
+input[type=email] {
+	min-width: 30ch;
+	max-width: 100%;
+}
+.radio-group > * + * {
+	margin-top: var(--global-nudge);
+}
+input[type=radio] {
+	min-width: var(--touch-target-min);
+	min-height: var(--touch-target-min);
+	cursor: pointer;
+	position: relative;
+	border: none;
+	z-index: 1;
+}
+input[type=radio]::after {
+	content: '';
+	min-width: var(--touch-target-min);
+	min-height: var(--touch-target-min);
+	border: var(--border);
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+input[type=checkbox] {
+	min-width: var(--touch-target-min);
+	min-height: var(--touch-target-min);
+	cursor: pointer;
+	border: none;
+	position: relative;
+	z-index: 1;
+}
+input[type=checkbox]::after {
+	content: '';
+	min-width: var(--touch-target-min);
+	min-height: var(--touch-target-min);
+	border: var(--border);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+form *.invalid {
+	color: var(--red);
+	--primary: var(--red);
+	position: relative;
+	transform: scale(1.01) translateY(-1px);
+	transition: all 0.5s ease-in-out;
+}
+form *.invalid > input {
+	box-shadow: var(--box-shadow);
+}
+
+.form-feedback.active {
+	padding: 1rem;
+  background: white;
+	box-shadow: var(--box-shadow-xl);
+}
+
+@media (max-width: 60rem) {
+	.input-group {
+		width: 100%;
+		margin-left: 0 !important;
+	}
+	.input-group input {
+		max-width: 100%;
+	}
+	.input-group input[type="email"] {
+		min-width: unset;
+	}
+	.input-group + .input-group {
+		margin-top: var(--global-nudge);
+	}
+}

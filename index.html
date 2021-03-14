@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Heartland Coding Challenge</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Glegoo|Podkova">
+	<link rel="stylesheet" href="./src/css/base.css">
+	<link rel="stylesheet" href="./src/css/style.css">
+	<script src="./src/js/script.js"></script>
+</head>
+<body>
+
+	<h1>Heartland Coding Challenge</h1>
+
+	<section class="member-form-container">
+
+		<h2>Sign up to become a member</h2>
+
+		<form id="member-form" class="member-form flow-content">
+
+			<div class="form-feedback" tabindex="-1" aria-live="polite"></div>
+
+			<div class="form-group">
+				<div class="input-group required" data-type="text">
+					<label for="first-name">First Name</label>
+					<input value="" autocomplete="given-name" type="text" name="first-name" id="first-name" required>
+				</div>
+				<div class="input-group required">
+					<label for="last-name">Last Name</label>
+					<input value="" autocomplete="family-name" type="text" name="last-name" id="last-name" required>
+				</div>
+				<div class="input-group required">
+					<label for="age">Age</label>
+					<input value="" type="number" step="1" min="0" max="120" name="age" id="age" class="age over-18" required>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="input-group required">
+					<label for="email">Email</label>
+					<input value="" autocomplete="email" type="email" name="email" id="email" required>
+				</div>
+				<div class="input-group required">
+					<label for="zip-code">ZIP Code</label>
+					<input value="" autocomplete="postal-code" id="zip-code" name="zip-code" type="text" inputmode="numeric" pattern="[0-9]{5}" class="zip-code" required>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div tabindex="-1" id="preferred-contact" name="preferred-contact" class="input-group radio-group" role="radiogroup">
+					<label for="preferred-contact">What is your preferred contact method?</label>
+					<div class="radio-option">
+						<input id="preferred-contact-1" tabindex="0" aria-checked="true" name="preferred-contact" type="radio" id="preferred-contact-email" value="email">
+						<label for="preferred-contact-email">Email</label>
+					</div>
+					<div class="radio-option">
+						<input id="preferred-contact-2" tabindex="-1" aria-checked="false" name="preferred-contact" type="radio" id="preferred-contact-text" value="text">
+						<label for="preferred-contact-text">Text</label>
+					</div>
+					<div class="radio-option">
+						<input id="preferred-contact-3" tabindex="-1" aria-checked="false" name="preferred-contact" type="radio" id="preferred-contact-phone" value="phone">
+						<label for="preferred-contact-phone">Phone</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group top-space">
+				<p>By signing up, I agree to the Heartland Payment Systems <a href="https://www.heartland.us/privacy-policy">Privacy Notice</a> and <a href="https://www.heartland.us/terms-of-use">Terms of Use</a>.</p>
+				<div class="input-group required checkbox-group">
+					<input type="checkbox" name="agree" id="agree" required aria-checked="false">
+					<label for="email">I agree</label>
+				</div>
+			</div>
+
+			<div class="form-group top-space">
+				<button class="btn" type="submit">Submit</button>
+			</div>
+
+		</form>
+	</section>
+
+</body>
+</html>
